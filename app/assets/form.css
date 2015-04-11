@@ -64,6 +64,7 @@ h1{
 .title{
   position: relative;
   z-index: 47;
+  cursor: pointer;
 }
 
 .bar:before, .bar:after   {
