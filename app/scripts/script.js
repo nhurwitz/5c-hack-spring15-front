@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var clicked = false;
-	$('#fsp').click(function(){	
+
+	$('.btn').click(function(){	
 	 	if (!clicked){
 	 		clicked = true;
 	 		$( "#container" ).animate({
