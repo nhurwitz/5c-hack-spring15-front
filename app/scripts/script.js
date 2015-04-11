@@ -16,16 +16,22 @@ $(document).ready(function() {
   			setTimeout(function() {
   				$( '.img' ).fadeTo( "medium", 1);
   			},350);
-  			$("#graph").remove();
-			$("#graphrow").append("<div id='graph'></div>");
-			cy_init();
+  			
+			
+  				$("#graph").remove();
+				$("#graphrow").append("<div id='graph'></div>");
+				cy_init();
+  			
 	 	}
 	}); 
 	$('.btn').click(function(){	
 		var a = $("#start").val();
 		var b = $("#end").val();
 		if ($(this).attr('name') == "fsp"){
-			draw(["banana", "Paris"]);
+			setTimeout(function() {
+  				draw(["banana", "Paris"]);
+  			},500);
+			
 		} else{ 
 		if ($(this).attr('name') == "ifl" ){
 			var a = document.getElementById("start");
