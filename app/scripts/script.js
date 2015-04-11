@@ -16,11 +16,7 @@ $(document).ready(function() {
   			setTimeout(function() {
   				$( '.img' ).fadeTo( "medium", 1);
   			},350);
-  			
-			
-  				$("#graph").remove();
-				$("#graphrow").append("<div id='graph'></div>");
-				cy_init();
+        redrawGraph();
   			
 	 	}
 	}); 
@@ -29,6 +25,7 @@ $(document).ready(function() {
       submit();
 		} else{ 
 		if ($(this).attr('name') == "ifl" ){
+      redrawGraph();
       var a = document.getElementById("start");
       var b = document.getElementById("end");
       $.get('http://localhost:3000/v1/random', function(data) {
@@ -62,3 +59,8 @@ function submit() {
   });
 }
 
+function redrawGraph() {
+  $("#graph").remove();
+  $("#graphrow").append("<div id='graph'></div>");
+  cy_init();
+}
