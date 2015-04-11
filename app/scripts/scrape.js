@@ -20,7 +20,7 @@ function getThumb(title, handleThumb) {
 }
 
 function sanitizeID(string) {
-  return string.replace('(', '').replace(')', '').replace(';', '').replace('.', '');
+  return string.replace('(', '').replace(')', '').replace(';', '').replace('.', '').replace(/[^a-zA-Z0-9]/g, '');
 }
 
 function draw(path) {
@@ -35,6 +35,7 @@ function draw(path) {
 
         function processTitle() {
             clean_title = encodeURIComponent(path[i].replace(/\s+/g,'_'));
+            console.log(sanitizeID(clean_title));
             cy.style().selector('#'+sanitizeID(clean_title))
             .css({
                 'content': path[i]
