@@ -10,7 +10,9 @@ function getThumb(title, handleThumb) {
         success: function (data, textStatus, jqXHR) {
             var pages = data["query"]["pages"];
             for (var p in pages) {
-                handleThumb(pages[p]["thumbnail"]["source"], title);
+                var thumbnail = pages[p].thumbnail;
+                var src = thumbnail ? thumbnail.source : "upload.wikimedia.org/wikipedia/meta/b/be/Wikipedia-logo-v2_2x.png";
+                handleThumb(src, title);
             }
             
         },
@@ -18,7 +20,7 @@ function getThumb(title, handleThumb) {
 }
 
 function sanitizeID(string) {
-  return string.replace('(', '').replace(')', '').replace(';', '');
+  return string.replace('(', '').replace(')', '').replace(';', '').replace('.', '');
 }
 
 function draw(path) {
