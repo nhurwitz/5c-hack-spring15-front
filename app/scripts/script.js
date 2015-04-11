@@ -25,13 +25,8 @@ $(document).ready(function() {
 	 	}
 	}); 
 	$('.btn').click(function(){	
-		var a = $("#start").val();
-		var b = $("#end").val();
 		if ($(this).attr('name') == "fsp"){
-			setTimeout(function() {
-  				draw(["banana", "Paris"]);
-  			},500);
-			
+      submit();
 		} else{ 
 		if ($(this).attr('name') == "ifl" ){
       var a = document.getElementById("start");
@@ -39,6 +34,7 @@ $(document).ready(function() {
       $.get('http://localhost:3000/v1/random', function(data) {
         a.value = data.origin;
         b.value = data.destination;
+        submit();
       });
 		}
 		}
@@ -54,3 +50,15 @@ $(document).ready(function() {
 	}); 
 
 });
+
+function submit() {
+  var a = $("#start").val();
+  var b = $("#end").val();
+  $.get('http://localhost:3000/v1/path?origin=' + a + '&destination=' + b, function(data) {
+    console.log(data);
+    setTimeout(function() {
+      draw(data);
+    }, 500);
+  });
+}
+
