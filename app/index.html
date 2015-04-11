@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="wikirace" lang="en" >
+  <!DOCTYPE html>
+  <html ng-app="wikirace" lang="en" >
   <head>
     <title>Angular Material - Starter App</title>
 
@@ -13,45 +13,36 @@
     <link rel="stylesheet" href="assets/form.css"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script type="text/javascript" 
-   src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-</script>
+    src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
   </head>
 
   <body ng-controller="WikiLinksCntrl">
+    <div class="container">
 
-      <h1>Wikipath</h1>
-
-    <div flex layout="row">
-      <div id="container">
-        <form>
-    
-          <div class="group">      
-            <input type="text" required>
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label>  <div class="sans">      Starticle </div></label>
+      <h1 class="text-center">Wikipath</h1>
+      <div id="controls">
+        <div class="row">
+          <div class="col-md-6 text-center">
+              <input type="text" required>
+              <span class="bar"></span>
+              <label>Starticle</label>
           </div>
-            
-          <div class="group group2">      
-            <input type="text" required>
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label><div class="sans">      Endicle </div></label>
+          <div class="col-md-6 text-center">
+              <input type="text" required>
+              <span class="bar"></span>
+              <label>Endicle</label>
           </div>
+        </div>
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default" id = "fsp">Find shortest path</button>
-  <button type="button" class="btn btn-default" id = "ifl">I'm feeling lucky</button>
-</div>
-          <div class="btn-group" role="group" aria-label="...">
+        <div class="row text-center buttons">
+
             <button type="button" class="btn btn-default">Find shortest path</button>
             <button type="button" class="btn btn-default">I'm feeling lucky</button>
-          </div>
-            
-        </form>
+        </div>
+
       </div>
 
-      <div ng-wikibubble ng-wikimg="Orange_(colour)"></div>
 
 
     </div>
@@ -68,4 +59,4 @@
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
   </body>
-</html>
+  </html>

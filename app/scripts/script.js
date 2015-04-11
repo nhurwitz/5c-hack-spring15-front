@@ -4,8 +4,8 @@ $(document).ready(function() {
 	$('.btn').click(function(){	
 	 	if (!clicked){
 	 		clicked = true;
-	 		$( "#container" ).animate({
-    			top: "-=100",
+	 		$( "#controls" ).animate({
+    			marginTop: "-=150",
   			}, 500, function() {
    			 // Animation complete.
   			});
