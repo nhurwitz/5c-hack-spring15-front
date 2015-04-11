@@ -21,6 +21,8 @@ function draw(path) {
     var duration = 500;
     var delay = 10;
     var old_title = "";
+    var margin = (1240-250*path.length)/2+75;
+    console.log(margin);
 
     (function() {
         var i = 0;
@@ -40,7 +42,7 @@ function draw(path) {
             
                 cy.add([
                     { group: "nodes", data: { id: clean_title, href: url },
-                         position: {x:100+150*(i-1), y:100} },
+                         position: {x:margin+250*(i-1), y:100} },
                     ])
                 if (i > 0) {
                     cy.add([
@@ -49,7 +51,7 @@ function draw(path) {
                 }
                 old_title = clean_title;
                 cy.$('#'+clean_title).delay(delay).animate({
-                        position: {x:100+250*i, y:100},
+                        position: {x:margin+250*i, y:100},
                         css: {'opacity':1}
                     }, { duration: duration, complete: function() {
                         ++i;
