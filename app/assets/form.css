@@ -6,7 +6,8 @@
 }
 
 #controls{
-  margin-top: 250px;
+  margin-top: 0px;
+  z-index: -10;
 }
 
 input         {
@@ -40,7 +41,7 @@ input:focus ~ label, input:valid ~ label     {
 }
 
 h1{
-  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
+  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif;
 }
 
 /* BOTTOM BARS ================================= */
@@ -54,6 +55,11 @@ h1{
 h1{
   margin-top: 60px;
   font-size: 350%;
+}
+
+.title{
+  position: relative;
+  z-index: 47;
 }
 
 .bar:before, .bar:after   {
@@ -80,4 +86,5 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 .buttons {
   margin-top: 50px;
   font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
+  z-index: -10;
 }
