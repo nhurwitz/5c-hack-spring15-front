@@ -22,12 +22,12 @@ input:focus     { outline:none; }
 label          {
   color:#999; 
   font-size:18px;
-  font-weight:normal;
+  font-weight:lighter;
   position:absolute;
   pointer-events:none;
   top:10px;
   transition:0.2s ease all; 
-  padding-left: 50px;
+  right: 370px;
 }
 
 /* active state */
@@ -40,6 +40,7 @@ input:focus ~ label, input:valid ~ label     {
 /* BOTTOM BARS ================================= */
 .bar  {
   position:relative;
+  left: -22px;
   display:block;
   width: 300px;
 }
