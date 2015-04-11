@@ -5,7 +5,7 @@ $(document).ready(function() {
 	 	if (!clicked){
 	 		clicked = true;
 	 		$( "#controls" ).animate({
-    			marginTop: "-=150",
+    			marginTop: "-=250",
   			}, 500, function() {
    			 // Animation complete.
   			});
