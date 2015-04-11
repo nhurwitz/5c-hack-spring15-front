@@ -16,6 +16,7 @@ input         {
   width:300px;
   border:none;
   border-bottom:1px solid #757575;
+  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
 }
 input:focus     { outline:none; }
 
@@ -28,6 +29,7 @@ label          {
   top:10px;
   transition:0.2s ease all; 
   right: 370px;
+  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
 }
 
 /* active state */
@@ -35,6 +37,10 @@ input:focus ~ label, input:valid ~ label     {
   top:-20px;
   font-size:14px;
   color:#5264AE;
+}
+
+h1{
+  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
 }
 
 /* BOTTOM BARS ================================= */
@@ -46,7 +52,8 @@ input:focus ~ label, input:valid ~ label     {
 }
 
 h1{
-  font-size: 280%;
+  margin-top: 60px;
+  font-size: 350%;
 }
 
 .bar:before, .bar:after   {
@@ -72,4 +79,5 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 .buttons {
   margin-top: 50px;
+  font-family: 'Hoefler Text', 'Times New Roman', 'Times New Roman', Times, serif
 }
