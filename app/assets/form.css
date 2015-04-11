@@ -88,6 +88,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
   #graph {
+    margin-top: 150px;
     height: 500px;
     width: 100%;
   }

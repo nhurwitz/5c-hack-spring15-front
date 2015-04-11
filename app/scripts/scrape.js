@@ -1,8 +1,7 @@
 var cy;
 
 function getThumb(title, handleThumb) {
-    var url = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&pithumbsize=100&titles="+title;
-
+    var url = "http://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages&pithumbsize=200&titles="+title;
     $.ajax({
         type: "GET",
         url: url,
@@ -50,7 +49,7 @@ function draw(path) {
                 }
                 old_title = clean_title;
                 cy.$('#'+clean_title).delay(delay).animate({
-                        position: {x:100+150*i, y:100},
+                        position: {x:100+250*i, y:100},
                         css: {'opacity':1}
                     }, { duration: duration, complete: function() {
                         ++i;
@@ -71,8 +70,8 @@ function cy_init() {
         style: cytoscape.stylesheet()
         .selector('node')
         .css({
-            'height': "80px",
-            'width': "80px",
+            'height': "150px",
+            'width': "150px",
             'background-fit': 'cover',
             'border-color': '#5264AE',
             'color': '#757575',
