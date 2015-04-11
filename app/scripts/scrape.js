@@ -17,6 +17,10 @@ function getThumb(title, handleThumb) {
     });
 }
 
+function sanitizeID(string) {
+  return string.replace('(', '').replace(')', '').replace(';', '');
+}
+
 function draw(path) {
     var duration = 500;
     var delay = 10;
@@ -29,29 +33,29 @@ function draw(path) {
 
         function processTitle() {
             clean_title = encodeURIComponent(path[i].replace(/\s+/g,'_'));
-            cy.style().selector('#'+clean_title)
+            cy.style().selector('#'+sanitizeID(clean_title))
             .css({
                 'content': path[i]
             })
             getThumb(clean_title, function (url, clean_title) {
-                cy.style().selector('#'+clean_title)
+                cy.style().selector('#'+sanitizeID(clean_title))
                 .css({
                     'background-image': url,
                     'z-index' : path.length-i
                 })
             
                 cy.add([
-                    { group: "nodes", data: { id: clean_title, href: url },
+                    { group: "nodes", data: { id: sanitizeID(clean_title), href: url },
                          position: {x:margin+250*(i-1), y:100} },
                     ])
                 if (i > 0) {
                     cy.add([
-                        { group: "edges", data: { source: old_title , target: clean_title } },
+                        { group: "edges", data: { source: old_title , target: sanitizeID(clean_title) } },
                         ])
                 }
-                old_title = clean_title;
-                cy.$('#'+clean_title).delay(delay).animate({
-                        position: {x:margin+250*i, y:100},
+                old_title = sanitizeID(clean_title);
+                cy.$('#'+sanitizeID(clean_title)).delay(delay).animate({
+                        position: {x:100+250*i, y:100},
                         css: {'opacity':1}
                     }, { duration: duration, complete: function() {
                         ++i;
