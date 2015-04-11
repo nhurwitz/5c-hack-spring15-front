@@ -19,8 +19,18 @@ $(document).ready(function() {
 	 	}
 	}); 
 	$('.btn').click(function(){	
-	 	if (!clicked){
-	 		
+		var a = $("#start").val();
+		var b = $("#end").val();
+		if ($(this).attr('name') == "fsp" &&(a == "" || b == "")){
+			alert("Enter start and end articles to scope the dank path, homey!");
+		} else{ 
+		if ($(this).attr('name') == "ifl" ){
+			var a = document.getElementById("start");
+			a.value = "random";
+			var b = document.getElementById("end");
+			b.value = "random";
+		}
+		 if (!clicked){
 	 		clicked = true;
 	 		$( "#controls" ).animate({
     			marginTop: "-=310",
@@ -29,6 +39,7 @@ $(document).ready(function() {
   			});
   			 $( '.img' ).fadeTo( "medium", 0 );
 	 	}
+	 }
 	}); 
 
 });
