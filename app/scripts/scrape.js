@@ -11,7 +11,7 @@ function getThumb(title, handleThumb) {
             var pages = data["query"]["pages"];
             for (var p in pages) {
                 var thumbnail = pages[p].thumbnail;
-                var src = thumbnail ? thumbnail.source : "upload.wikimedia.org/wikipedia/meta/b/be/Wikipedia-logo-v2_2x.png";
+                var src = thumbnail ? thumbnail.source : "http://upload.wikimedia.org/wikipedia/meta/b/be/Wikipedia-logo-v2_2x.png";
                 handleThumb(src, title);
             }
             
@@ -58,7 +58,7 @@ function draw(path) {
                 }
                 old_title = sanitizeID(clean_title);
                 cy.$('#'+sanitizeID(clean_title)).delay(delay).animate({
-                        position: {x:100+250*i, y:100},
+                        position: {x:margin+250*i, y:100},
                         css: {'opacity':1}
                     }, { duration: duration, complete: function() {
                         ++i;
