@@ -6,7 +6,7 @@
 }
 
 #controls{
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 input         {
@@ -44,6 +44,11 @@ input:focus ~ label, input:valid ~ label     {
   display:block;
   width: 300px;
 }
+
+h1{
+  font-size: 280%;
+}
+
 .bar:before, .bar:after   {
   content:'';
   height:2px; 
