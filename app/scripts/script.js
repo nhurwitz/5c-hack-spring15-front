@@ -34,10 +34,12 @@ $(document).ready(function() {
 			
 		} else{ 
 		if ($(this).attr('name') == "ifl" ){
-			var a = document.getElementById("start");
-			a.value = "random";
-			var b = document.getElementById("end");
-			b.value = "random";
+      var a = document.getElementById("start");
+      var b = document.getElementById("end");
+      $.get('http://localhost:3000/v1/random', function(data) {
+        a.value = data.origin;
+        b.value = data.destination;
+      });
 		}
 		}
 		 if (!clicked){
