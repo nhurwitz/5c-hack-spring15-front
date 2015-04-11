@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/form.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   </head>
 
   <body layout="column">
 
     <md-toolbar layout="row">
-      <h1>Cool Fucking Apps</h1>
+      <h1>Wikipath</h1>
     </md-toolbar>
 
     <div flex layout="row">
@@ -27,22 +28,29 @@
             <input type="text" required>
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Starticle</label>
+            <label>  <div class="sans">      Starticle </div></label>
           </div>
             
           <div class="group group2">      
             <input type="text" required>
             <span class="highlight"></span>
             <span class="bar"></span>
-            <label>Endicle</label>
+            <label><div class="sans">      Endicle </div></label>
           </div>
 
-
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Find shortest path</button>
+  <button type="button" class="btn btn-default">I'm feeling lucky</button>
+</div>
             
         </form>
       </div>
 
+
+
     </div>
+
+
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
