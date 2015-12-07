@@ -21,6 +21,8 @@
     <div class="container">
 
       <div class = "title"><h1 class="text-center"> Wikipath</h1></div>
+         <!-- Button trigger modal -->
+
       <div class = "img text-center">
         <img src="assets/wiki.png" alt="Smiley face" height="220" width="220">
         </div>
@@ -39,10 +41,19 @@
           </div>
         </div>
 
-        <div class="row text-center buttons">
+        <div class="buttons">
+          <div class="row text-center">
+            <button type="button" class="btn btn-default" name = "fsp" id = "submit_button">Find shortest path</button>
+            <button type="button" class="btn btn-default" name = "ifl" id = "submit_button">I'm feeling lucky</button>
+          </div>
 
-            <button type="button" class="btn btn-default" name = "fsp">Find shortest path</button>
-            <button type="button" class="btn btn-default" name = "ifl">I'm feeling lucky</button>
+           <div class="row text-center buttons">
+          <div id="ibacor_shareawesome"></div>
+            </div>
+        </div>
+
+       
+
         </div>
 
       
@@ -66,6 +77,10 @@
     <script type="text/javascript" src="scripts/scrape.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+
+    <script src="scripts/ibacor_share.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="scripts/ibacor-sosmed-button.css" rel="stylesheet">
 
   </body>
   </html>

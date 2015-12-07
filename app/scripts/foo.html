@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Example of Bootstrap 3 Modals</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+<body>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+ About
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
+      </div> 
+
+      <div class="modal-body">
+      <p>
+       Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
+       <p>
+       It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, Ted Kornish and <a href = "http://zepstein.com">Ziv Epstein</a> and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>    
+</body>

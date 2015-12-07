@@ -20,7 +20,7 @@ $(document).ready(function() {
   			
 	 	}
 	}); 
-	$('.btn').click(function(){	
+	$('#submit_button').click(function(){	
 		if ($(this).attr('name') == "fsp"){
       submit();
 		} else{ 
@@ -64,3 +64,5 @@ function redrawGraph() {
   $("#graphrow").append("<div id='graph'></div>");
   cy_init();
 }
+
+
