@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="assets/form.css"/>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script type="text/javascript" 
-    src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-    </script>
+    src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
 
   <body ng-controller="WikiLinksCntrl">
@@ -22,7 +22,33 @@
 
       <div class = "title"><h1 class="text-center"> Wikipath</h1></div>
          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+ About
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
+      </div> 
+
+      <div class="modal-body">
+      <p>
+       Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
+       <p>
+       It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, Ted Kornish and <a href = "http://zepstein.com">Ziv Epstein</a> and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
       <div class = "img text-center">
         <img src="assets/wiki.png" alt="Smiley face" height="220" width="220">
         </div>
