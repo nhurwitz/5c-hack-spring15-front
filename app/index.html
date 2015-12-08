@@ -20,35 +20,15 @@
   <body ng-controller="WikiLinksCntrl">
     <div class="container">
 
-      <div class = "title"><h1 class="text-center"> Wikipath</h1></div>
+      <div class = "title"><h1 class="text-center"> Wikipath
+      		<a data-toggle="modal" data-target="#myModal">
+ <span class="glyphicon glyphicon-question-sign fa-0.5x text-muted" aria-hidden="true"></span>
+</a></h1>
+      </div>
          <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
- About
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
-      </div> 
-
-      <div class="modal-body">
-      <p>
-       Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
-       <p>
-       It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, Ted Kornish and <a href = "http://zepstein.com">Ziv Epstein</a> and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
-      </div>
 
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>  
+
       <div class = "img text-center">
         <img src="assets/wiki.png" alt="Smiley face" height="220" width="220">
         </div>
@@ -71,7 +51,34 @@
           <div class="row text-center">
             <button type="button" class="btn btn-default" name = "fsp" id = "submit_button">Find shortest path</button>
             <button type="button" class="btn btn-default" name = "ifl" id = "submit_button">I'm feeling lucky</button>
+            <button type="button" class="btn btn-default">
+            	<span class="glyphicon glyphicon-question-sign fa-0.5x text-muted" aria-hidden="true"></span>
+            	About 
+            </button>
           </div>
+          <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
+      </div> 
+
+      <div class="modal-body">
+      <p>
+       Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
+       <p>
+       It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, <a href = "http://zepstein.com">Ziv Epstein</a>  and <a href = "">Ted Kornish</a>  and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>  
 
            <div class="row text-center buttons">
           <div id="ibacor_shareawesome"></div>
