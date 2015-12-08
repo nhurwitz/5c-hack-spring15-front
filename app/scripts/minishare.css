@@ -15,7 +15,7 @@ div#minishare div.facebook, div#minishare div.twitter {
   background: #ebedf4;
   width: 65px;
   border: 1px solid #cad4e7;
-  background-image: url(../img/fb16.gif);
+  background-image: url(../assets/fb16.gif);
   background-repeat: no-repeat;
   background-position: 6px 6px;
   text-align: right;
@@ -38,7 +38,7 @@ div#minishare div.facebook:hover, div#minishare div.twitter:hover {
 div#minishare div.twitter {
   background-color: #dbf6ff;
   border-color: #42cfff;
-  background-image: url(../img/twt16.png);
+  background-image: url(../assets/twt16.png);
   margin-bottom: 0;
 }
 

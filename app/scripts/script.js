@@ -51,6 +51,10 @@ $(document).ready(function() {
 function submit() {
   var a = $("#start").val();
   var b = $("#end").val();
+  var uri = updateQueryStringParameter("", 'from', a);
+  uri = updateQueryStringParameter(uri, 'to', b);
+
+  window.location.hash=uri;
   $.get('http://localhost:3000/v1/path?origin=' + a + '&destination=' + b, function(data) {
     console.log(data);
     setTimeout(function() {
@@ -65,4 +69,13 @@ function redrawGraph() {
   cy_init();
 }
 
-
+function updateQueryStringParameter(uri, key, value) {
+  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+  if (uri.match(re)) {
+    return uri.replace(re, '$1' + key + "=" + value + '$2');
+  }
+  else {
+    return uri + separator + key + "=" + value;
+  }
+}
