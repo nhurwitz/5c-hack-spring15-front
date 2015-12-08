@@ -1,119 +1,94 @@
-  <!DOCTYPE html>
-  <html ng-app="wikirace" lang="en" >
-  <head>
-    <title>wikipath</title>
+<!DOCTYPE html>
+<html ng-app="wikirace" lang="en" >
+<head>
+<title>wikipath</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
-    <link rel="stylesheet" href="assets/form.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" 
-    src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+<link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+<link rel="stylesheet" href="assets/form.css"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript" 
+src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-aria/angular-aria.js"></script>
+<script src="src/controllers.js"></script>
+<script src="src/directives.js"></script>
+<script src="src/helpers.js"></script>
+<script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+<script type="text/javascript" src="scripts/scrape.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
-  <body ng-controller="WikiLinksCntrl">
-    <div class="container">
+<script type="text/javascript" src="scripts/minishare-0.0.1.js"></script>
+</head>
 
-      <div class = "title"><h1 class="text-center"> Wikipath
-      		<a data-toggle="modal" data-target="#myModal">
- <span class="glyphicon glyphicon-question-sign fa-0.5x text-muted" aria-hidden="true"></span>
-</a></h1>
-      </div>
-         <!-- Button trigger modal -->
+<body ng-controller="WikiLinksCntrl">
+<div class="container">
+	<div class = "title"><h1 class="text-center"> Wikipath</h1>
+	</div>
+	<!-- Button trigger modal -->
+	<div class = "img text-center">
+		<img src="assets/wiki.png" alt="Smiley face" height="220" width="220">
+	</div>
+	<div id="controls">
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<input type="text" id="start" required>
+				<span class="bar"></span>
+				<label>Starticle</label>
+			</div>
 
+			<div class="col-md-6 text-center">
+				<input type="text" id="end" required>
+				<span class="bar"></span>
+				<label>Endicle</label>
+			</div>
+		</div>
+		<div class="buttons">
+			<div class="row text-center">
+				<button type="button" class="btn btn-default" name = "fsp" id = "submit_button"> <i class="fa fa-road"></i> Find shortest path</button>
+				<button type="button" class="btn btn-default" name = "ifl" id = "submit_button"><i class="fa fa-random"></i> I'm feeling lucky</button>
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+					<i class="fa fa-info"></i> About
+				</button>
+			</div>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
+						</div> 
 
-
-      <div class = "img text-center">
-        <img src="assets/wiki.png" alt="Smiley face" height="220" width="220">
-        </div>
-      <div id="controls">
-        <div class="row">
-          <div class="col-md-6 text-center">
-              <input type="text" id="start" required>
-              <span class="bar"></span>
-              <label>Starticle</label>
-          </div>
-          
-          <div class="col-md-6 text-center">
-              <input type="text" id="end" required>
-              <span class="bar"></span>
-              <label>Endicle</label>
-          </div>
-        </div>
-
-        <div class="buttons">
-          <div class="row text-center">
-            <button type="button" class="btn btn-default" name = "fsp" id = "submit_button">Find shortest path</button>
-            <button type="button" class="btn btn-default" name = "ifl" id = "submit_button">I'm feeling lucky</button>
-            <button type="button" class="btn btn-default">
-            	<span class="glyphicon glyphicon-question-sign fa-0.5x text-muted" aria-hidden="true"></span>
-            	About 
-            </button>
-          </div>
-          <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">About Wikipath</h4>
-      </div> 
-
-      <div class="modal-body">
-      <p>
-       Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
-       <p>
-       It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, <a href = "http://zepstein.com">Ziv Epstein</a>  and <a href = "">Ted Kornish</a>  and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
-      </div>
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>  
-
-           <div class="row text-center buttons">
-          <div id="ibacor_shareawesome"></div>
-            </div>
-        </div>
-
-       
-
-        </div>
-
-      
-      <div id="graphrow" class="row">
-        <div id="graph"></div>
-      </div>
-</div>
-
-
-    </div>
-
-
-
-    <script src="./bower_components/angular/angular.js"></script>
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./bower_components/angular-aria/angular-aria.js"></script>
-    <script src="src/controllers.js"></script>
-    <script src="src/directives.js"></script>
-    <script src="src/helpers.js"></script>
-    <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
-    <script type="text/javascript" src="scripts/scrape.js"></script>
-    <script type="text/javascript" src="scripts/script.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
-
-    <script src="scripts/ibacor_share.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="scripts/ibacor-sosmed-button.css" rel="stylesheet">
-
-  </body>
-  </html>
+						<div class="modal-body">
+							<p>
+								Wikipath finds the shortest path form one Wikipedia page to another. This can be useful for high scores in the <a href = "http://thewikigame.com">Wikipedia Game</a> or just for exploring the vastness of Wikipedia.</p>
+								<p>
+									It is built and maintained by <a href = "http://nhurwitz.com">Noam Hurwtiz</a>, Dima Smirnov, <a href = "http://zepstein.com">Ziv Epstein</a>  and <a href = "">Ted Kornish</a>  and was originally implemented for the <a href = "http://www.5chackathon.com">Claremont 5C Hackthon </a> where it won first prize. We hope you like it! </p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>  
+				</div>
+			</div>
+			<div id="graphrow" class="row">
+				<div id="graph"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$.miniShare();
+	</script>
+</body>
+</html>
